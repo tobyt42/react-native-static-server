@@ -752,7 +752,7 @@ static inline NSUInteger _ScanHexNumber(const void* bytes, NSUInteger size) {
   }
 
   [response setValue:@"GET" forAdditionalHeader:@"Access-Control-Request-Method"];
-  [response setValue:@"OriginX-Requested-With, Content-Type, Accept, Cache-Control, Range,Access-Control-Allow-Origin"  forAdditionalHeader:@"Access-Control-Request-Headers"];
+  [response setValue:@"Origin,X-Requested-With, Content-Type, Accept, Cache-Control, Range,Access-Control-Allow-Origin"  forAdditionalHeader:@"Access-Control-Request-Headers"];
   [response setValue: @"*" forAdditionalHeader:@"Access-Control-Allow-Origin"];
 
   return response;
@@ -791,7 +791,7 @@ static inline BOOL _CompareResources(NSString* responseETag, NSString* requestET
     newResponse.eTag = response.eTag;
       
     [newResponse setValue:@"GET" forAdditionalHeader:@"Access-Control-Request-Method"];
-    [newResponse setValue:@"OriginX-Requested-With, Content-Type, Accept, Cache-Control, Range,Access-Control-Allow-Origin"  forAdditionalHeader:@"Access-Control-Request-Headers"];
+    [newResponse setValue:@"Origin,X-Requested-With, Content-Type, Accept, Cache-Control, Range,Access-Control-Allow-Origin"  forAdditionalHeader:@"Access-Control-Request-Headers"];
     [newResponse setValue: @"*" forAdditionalHeader:@"Access-Control-Allow-Origin"];
 
     GWS_DCHECK(newResponse);
@@ -800,7 +800,7 @@ static inline BOOL _CompareResources(NSString* responseETag, NSString* requestET
   }
     
     [response setValue:@"GET" forAdditionalHeader:@"Access-Control-Request-Method"];
-    [response setValue:@"OriginX-Requested-With, Content-Type, Accept, Cache-Control, Range,Access-Control-Allow-Origin"  forAdditionalHeader:@"Access-Control-Request-Headers"];
+    [response setValue:@"Origin,X-Requested-With, Content-Type, Accept, Cache-Control, Range,Access-Control-Allow-Origin"  forAdditionalHeader:@"Access-Control-Request-Headers"];
     [response setValue: @"*" forAdditionalHeader:@"Access-Control-Allow-Origin"];
 
   GWS_DCHECK(response);
